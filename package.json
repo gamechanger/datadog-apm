@@ -1,0 +1,24 @@
+{
+    "name": "@gc/datadog-apm",
+    "version": "0.1.0",
+    "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
+    "main": "out/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gamechanger/datadog-apm.git"
+    },
+    "keywords": [
+        "datdog",
+        "gamechanger",
+        "apm"
+    ],
+    "author": "Matt Casey",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gamechanger/datadog-apm/issues"
+    },
+    "homepage": "https://github.com/gamechanger/datadog-apm#readme"
+}
