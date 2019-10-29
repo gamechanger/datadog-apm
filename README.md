@@ -29,11 +29,11 @@ Your observability code should stay out of the way of your business logic, and s
 
 ```TS
 // Trace a function
-@APM.trace
+@APM.trace()
 async function foo() {}
 
 // Trace *all* methods of a class
-@APM.trace
+@APM.trace()
 class GameChanger {
     public foo() {}
     private bar() {}
@@ -41,7 +41,7 @@ class GameChanger {
 
 // Trace *individual* methods of a class
 class GameChanger {
-    @APM.trace
+    @APM.trace()
     public foo() {}
     private bar() {}
 }
