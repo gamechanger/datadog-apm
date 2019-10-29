@@ -1,0 +1,52 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "jest",
+    "@typescript-eslint",
+    "simple-import-sort",
+    "prettier"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "root": true,
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

@@ -1,24 +1,50 @@
 {
-    "name": "@gc/datadog-apm",
-    "version": "0.1.0",
-    "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
-    "main": "out/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/gamechanger/datadog-apm.git"
-    },
-    "keywords": [
-        "datdog",
-        "gamechanger",
-        "apm"
-    ],
-    "author": "Matt Casey",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/gamechanger/datadog-apm/issues"
-    },
-    "homepage": "https://github.com/gamechanger/datadog-apm#readme"
+  "name": "@gamechanger/datadog-apm",
+  "version": "0.1.0",
+  "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamechanger/datadog-apm.git"
+  },
+  "keywords": [
+    "datdog",
+    "gamechanger",
+    "apm"
+  ],
+  "author": "GameChanger Media",
+  "contributors": [
+    "Matt Casey <matt@mattcasey.nyc>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gamechanger/datadog-apm/issues"
+  },
+  "homepage": "https://github.com/gamechanger/datadog-apm#readme",
+  "devDependencies": {
+    "@types/koa": "^2.0.51",
+    "@typescript-eslint/eslint-plugin": "2.3.2",
+    "@typescript-eslint/parser": "^2.6.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-simple-import-sort": "^4.0.0",
+    "prettier": "1.18.2",
+    "typescript": "^3.7.0-dev.20191015"
+  },
+  "dependencies": {
+    "dd-trace": "^0.15.3"
+  }
 }
