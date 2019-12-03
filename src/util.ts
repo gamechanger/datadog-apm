@@ -1,7 +1,7 @@
 import { Span } from 'dd-trace';
 import * as Formats from 'dd-trace/ext/formats';
 
-import { datadogTracer } from './tracer';
+import { tracer } from './tracer';
 
 type Nullable<T> = T | null;
 
@@ -13,7 +13,7 @@ type PrivateDatadogContext = {
     }
 }
 
-const getCurrentSpan = (): Nullable<Span> => datadogTracer.scope().active();
+const getCurrentSpan = (): Nullable<Span> => tracer.scope().active();
 
 /**
  * The root span is an undocumented internal property that DataDog adds to `context.req`.
@@ -60,7 +60,7 @@ const addLogMetadata = (metadata: object, span?: Span): void => {
         return;
     }
 
-    datadogTracer.inject(currentSpan.context(), Formats.LOG, metadata);
+    tracer.inject(currentSpan.context(), Formats.LOG, metadata);
 };
 
 /**

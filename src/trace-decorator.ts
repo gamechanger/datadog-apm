@@ -2,7 +2,7 @@ import { SpanOptions } from 'dd-trace';
 import * as DDTags from 'dd-trace/ext/tags';
 
 import * as Util from './util';
-import { datadogTracer, makeServiceName } from './tracer';
+import { tracer, tracerOptions } from './tracer';
 
 type DDTag = typeof DDTags[keyof typeof DDTags];
 
@@ -27,6 +27,8 @@ interface TraceConfig {
   tags?: Tags;
 }
 
+const makeServiceName = (serviceName: string): string => `${tracerOptions.service}-${serviceName}`;
+
 const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => any, P extends Parameters<F>, R extends ReturnType<F>>(target: F): F =>
     function wrapperFn(this: any, ...args: P): R {
         const {
@@ -39,7 +41,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
         const serviceName = config.serviceName
             ? makeServiceName(config.serviceName)
             : makeServiceName(spanName);
-        const childOf = datadogTracer.scope().active() || undefined;
+        const childOf = tracer.scope().active() || undefined;
         const resourceName = config.resourceName
             ? config.resourceName
             : className
@@ -54,7 +56,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
             },
         };
 
-        const span = datadogTracer.startSpan(spanName, spanOptions);
+        const span = tracer.startSpan(spanName, spanOptions);
 
         if (!span) {
             return target.call(this, ...args);
@@ -65,7 +67,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
         }
 
         // The callback fn needs to be wrapped in an arrow fn as the activate fn clobbers `this`
-        return datadogTracer.scope().activate(span, () => {
+        return tracer.scope().activate(span, () => {
             const output = target.call(this, ...args);
 
             if (output && typeof output.then === 'function') {
