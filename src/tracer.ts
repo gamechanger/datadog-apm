@@ -11,7 +11,7 @@ export const makeServiceName = (serviceName: string): string => `${tracerOptions
  *
  * @param options The `TracerOptions` to be passed the tracer init function
  */
-export const init = (options: TracerOptions): void => {
+const init = (options: TracerOptions): void => {
     tracerOptions = options;
 
     if (tracerOptions.enabled) {
@@ -25,3 +25,8 @@ export const init = (options: TracerOptions): void => {
         );
     }
 };
+
+export {
+    init,
+    TracerOptions,
+}

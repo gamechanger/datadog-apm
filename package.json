@@ -42,7 +42,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-simple-import-sort": "^4.0.0",
     "prettier": "1.18.2",
-    "typescript": "^3.7.0-dev.20191015"
+    "typescript": "^3.8.0-dev.20191203"
   },
   "dependencies": {
     "dd-trace": "^0.15.3"
