@@ -2,17 +2,18 @@ import { Span } from 'dd-trace';
 import * as Formats from 'dd-trace/ext/formats';
 
 import { datadogTracer } from './tracer';
-import { Context } from 'koa';
 
-const getCurrentSpan = (): Span | null => datadogTracer.scope().active();
+type Nullable<T> = T | null;
 
 type PrivateDatadogContext = {
-    req: {
+    req: object & {
         _datadog?: {
             span?: Span
         }
     }
 }
+
+const getCurrentSpan = (): Nullable<Span> => datadogTracer.scope().active();
 
 /**
  * The root span is an undocumented internal property that DataDog adds to `context.req`.
@@ -22,7 +23,7 @@ type PrivateDatadogContext = {
  *
  * @param context A Koa context object
  */
-export const getRootSpanFromRequestContext = (context: Context & PrivateDatadogContext): Span | null => {
+const getRootSpanFromRequestContext = (context: PrivateDatadogContext): Nullable<Span> => {
     // eslint-disable-next-line no-undef
     return context?.req?._datadog?.span ?? null;
 };
@@ -34,7 +35,7 @@ export const getRootSpanFromRequestContext = (context: Context & PrivateDatadogC
  * @param tags An object with the tags to add to the span
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-export const addTags = (tags: object, span?: Span): void => {
+const addTags = (tags: object, span?: Nullable<Span>): void => {
     const currentSpan = span || getCurrentSpan();
 
     if (!currentSpan) {
@@ -52,7 +53,7 @@ export const addTags = (tags: object, span?: Span): void => {
  * @param metadata The log metadata to augment
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-export const addLogMetadata = (metadata: object, span?: Span): void => {
+const addLogMetadata = (metadata: object, span?: Span): void => {
     const currentSpan = span || getCurrentSpan();
 
     if (!currentSpan) {
@@ -69,7 +70,7 @@ export const addLogMetadata = (metadata: object, span?: Span): void => {
  * @param error An Error object.
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-export const markAsError = (error: Error, span?: Span): void => {
+const markAsError = (error: Error, span?: Span): void => {
     addTags(
         {
             errorMessage: error.message,
@@ -79,4 +80,13 @@ export const markAsError = (error: Error, span?: Span): void => {
         },
         span
     );
+};
+
+export {
+    Span,
+    Formats,
+    getRootSpanFromRequestContext,
+    addTags,
+    addLogMetadata,
+    markAsError,
 };

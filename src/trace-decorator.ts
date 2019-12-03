@@ -135,7 +135,7 @@ const traceClass = (config?: TraceConfig) =>
  */
 // Going to rely on inferrence do its thing for this function
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export function trace(config?: TraceConfig) {
+function trace(config?: TraceConfig) {
     function traceDecorator(target: Constructor): void;
     function traceDecorator<T>(
         target: Record<string, any>,
@@ -153,3 +153,9 @@ export function trace(config?: TraceConfig) {
 
     return traceDecorator;
 }
+
+export {
+    trace,
+    traceFunction,
+    DDTags as Tags,
+};
