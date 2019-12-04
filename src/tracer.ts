@@ -1,7 +1,8 @@
 import { Tracer, TracerOptions } from 'dd-trace';
+import { mockTracer } from './mock-tracer';
 
 let tracerOptions: TracerOptions = {};
-let tracer: Tracer;
+let tracer: Tracer = mockTracer;
 
 /**
  * This is a wrapper around the datadog init function.
