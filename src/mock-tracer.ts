@@ -5,8 +5,15 @@ export const mockTracer = new Proxy({} as Tracer, {
     get<K extends keyof Tracer>(_target: Tracer, key: K) {
         console.warn(`Tried to access the DataDog tracer before the init function was called. Attempted to access property "${key}".`);
 
+        if ((key as any) === 'isMock') {
+            return true;
+        }
+
         if (key === 'scope') {
-            return () => ({ active: () => {} });
+            return () => ({
+                active: () => {},
+                activate: () => {},
+            });
         }
 
         if (

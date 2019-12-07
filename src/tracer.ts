@@ -2,7 +2,7 @@ import { Tracer, TracerOptions } from 'dd-trace';
 import { mockTracer } from './mock-tracer';
 
 let tracerOptions: TracerOptions = {};
-let tracer: Tracer = mockTracer;
+let tracer: Tracer & { isMock?: boolean } = mockTracer;
 
 /**
  * This is a wrapper around the datadog init function.
@@ -15,6 +15,7 @@ const init = (options: TracerOptions): void => {
     tracerOptions = options;
     tracer = require('dd-trace');
     tracer.init(tracerOptions);
+    tracer.isMock = false;
 
     if (tracerOptions.enabled) {
         console.log('DataDog APM Trace Running, with options: ', tracerOptions);

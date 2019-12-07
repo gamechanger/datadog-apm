@@ -30,6 +30,7 @@ interface TraceConfig {
 const makeServiceName = (serviceName: string): string => `${tracerOptions.service}-${serviceName}`;
 
 const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => any, P extends Parameters<F>, R extends ReturnType<F>>(target: F): F =>
+    tracer.isMock ? target :
     function wrapperFn(this: any, ...args: P): R {
         const {
             className,
