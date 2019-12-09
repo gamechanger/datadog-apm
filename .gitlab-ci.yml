@@ -3,7 +3,6 @@ image: docker.gamechanger.io/nodejs/10
 stages:
     - setup
     - test
-    - build
     - deploy
 
 install:
@@ -16,7 +15,6 @@ install:
         expire_in: 1 hour
         paths:
             - node_modules/
-            - lib/
     only:
         refs:
             - branches
@@ -36,6 +34,20 @@ test:
     stage: test
     script:
         - yarn test
+    only:
+        refs:
+            - branches
+            - tags
+
+compile:
+    stage: test
+    script:
+        - yarn build
+    artifacts:
+        name: 'lib-$CI_COMMIT_REF_NAME'
+        expire_in: 1 hour
+        paths:
+            - lib/
     only:
         refs:
             - branches
