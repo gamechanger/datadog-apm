@@ -18,12 +18,18 @@ const callableHandlers = {
 
 const callableMock = new Proxy(emptyFn, callableHandlers);
 
-export const mockTracer = new Proxy({} as Tracer, {
-    get<K extends keyof Tracer>(_target: Tracer, key: K) {
+type MockTracer = Tracer & { isMock?: boolean };
+
+export const mockTracer = new Proxy({} as MockTracer, {
+    get<K extends keyof MockTracer>(_target: Tracer, key: K) {
         console.warn(`Tried to access the DataDog tracer before the init function was called. Attempted to access property "${key}".`);
 
-        if ((key as any) === 'isMock') {
+        if (key === 'isMock') {
             return true;
+        }
+
+        if (key === 'wrap') {
+            return (_: any, f: any) => f;
         }
 
         return callableMock;

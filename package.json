@@ -1,50 +1,55 @@
 {
-  "name": "@gamechanger/datadog-apm",
-  "version": "0.1.3",
-  "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "files": [
-    "lib/**/*"
-  ],
-  "scripts": {
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepare": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gamechanger/datadog-apm.git"
-  },
-  "keywords": [
-    "datdog",
-    "gamechanger",
-    "apm"
-  ],
-  "author": "GameChanger Media",
-  "contributors": [
-    "Matt Casey <matt@mattcasey.nyc>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gamechanger/datadog-apm/issues"
-  },
-  "homepage": "https://github.com/gamechanger/datadog-apm#readme",
-  "devDependencies": {
-    "@types/koa": "^2.0.51",
-    "@typescript-eslint/eslint-plugin": "2.3.2",
-    "@typescript-eslint/parser": "^2.6.0",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.15.1",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-simple-import-sort": "^4.0.0",
-    "prettier": "1.18.2",
-    "typescript": "^3.8.0-dev.20191203"
-  },
-  "dependencies": {
-    "dd-trace": "^0.15.3"
-  }
+    "name": "@gamechanger/datadog-apm",
+    "version": "0.1.3",
+    "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
+    "scripts": {
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "test": "jest",
+        "build": "tsc",
+        "watch": "tsc -w",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run lint && npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gamechanger/datadog-apm.git"
+    },
+    "keywords": [
+        "datdog",
+        "gamechanger",
+        "apm"
+    ],
+    "author": "GameChanger Media",
+    "contributors": [
+        "Matt Casey <matt@mattcasey.nyc>"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/gamechanger/datadog-apm/issues"
+    },
+    "homepage": "https://github.com/gamechanger/datadog-apm#readme",
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/koa": "^2.0.51",
+        "@typescript-eslint/eslint-plugin": "2.3.2",
+        "@typescript-eslint/parser": "^2.6.0",
+        "eslint": "^6.5.1",
+        "eslint-config-prettier": "^6.4.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jest": "^22.15.1",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-simple-import-sort": "^4.0.0",
+        "jest": "^24.9.0",
+        "prettier": "1.18.2",
+        "ts-jest": "^24.2.0",
+        "typescript": "^3.8.0-dev.20191203"
+    },
+    "dependencies": {
+        "dd-trace": "^0.15.3"
+    }
 }
