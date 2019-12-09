@@ -1,0 +1,65 @@
+image: docker.gamechanger.io/nodejs/10
+
+stages:
+    - setup
+    - test
+    - build
+    - deploy
+
+install:
+    stage: setup
+    script:
+        - yarn install
+    interruptible: true
+    artifacts:
+        name: 'node-modules-$CI_COMMIT_REF_NAME'
+        expire_in: 1 hour
+        paths:
+            - node_modules/
+    only:
+        refs:
+            - branches
+            - pushes
+            - external_pull_requests
+
+lint:
+    stage: test
+    script:
+        - yarn lint
+    interruptible: true
+    only:
+        refs:
+            - branches
+            - pushes
+            - external_pull_requests
+
+test:
+    stage: test
+    script:
+        - yarn test
+    only:
+        refs:
+            - branches
+            - pushes
+            - external_pull_requests
+
+compile:
+    stage: build
+    script:
+        - yarn build
+    artifacts:
+        name: 'lib-$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG'
+        expire_in: 1 day
+        paths:
+            - lib/
+    only:
+        refs:
+            - master
+
+publish:
+    stage: deploy
+    script:
+        - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+        - npm publish
+    only:
+        - /\d+\.\d+\.\d+/
