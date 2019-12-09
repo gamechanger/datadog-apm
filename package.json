@@ -12,8 +12,8 @@
         "test": "jest",
         "build": "tsc",
         "watch": "tsc -w",
-        "prepublish": "npm run lint && npm run test",
-        "prepare": "npm run build"
+        "prepublishOnly": "npm run lint && npm run test",
+        "prepack": "npm run build"
     },
     "repository": {
         "type": "git",
