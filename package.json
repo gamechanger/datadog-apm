@@ -8,12 +8,12 @@
         "lib/**/*"
     ],
     "scripts": {
-        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "lint": "eslint . --ext .ts,.tsx",
         "test": "jest",
         "build": "tsc",
         "watch": "tsc -w",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm run lint && npm run test"
+        "prepublish": "npm run lint && npm run test",
+        "prepare": "npm run build"
     },
     "repository": {
         "type": "git",
