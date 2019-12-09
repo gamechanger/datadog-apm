@@ -5,11 +5,12 @@ A lightweight wrapper over Datadog's `dd-trace` library, adding utility function
 ## Motivation
 
 `dd-trace` offers power and flexibility, but with that comes complexity. This wrapper adds helpers to simplify with:
-- Tracing functions (including async)
-- Tracing class methods
-- Adding tags to the active span
-- Adding tags to the *root* span (Required to enable filtering and searching in Trace Search and Analytics)
-- Marking a span as an error without throwing
+
+-   Tracing functions (including async)
+-   Tracing class methods
+-   Adding tags to the active span
+-   Adding tags to the _root_ span (Required to enable filtering and searching in Trace Search and Analytics)
+-   Marking a span as an error without throwing
 
 ## Install
 
@@ -58,6 +59,7 @@ class EmailQueue {
 Adding tags happens throughout the code, and so ideally adds as few lines as possible.
 
 With vanilla `dd-trace`, you must always check if the active span exists:
+
 ```JS
 const span = tracer.scope().active();
 
@@ -69,6 +71,7 @@ if (span !== null) {
 ```
 
 This wrapper helps clean things up for you:
+
 ```TS
 APM.addTags({ 'http.method': req.method })
 ```
@@ -89,3 +92,9 @@ APM.addTags({ teamId: context.params.teamId }, APM.getRootSpanFromContext(contex
 ```TS
 APM.markAsError(new Error('I am not thrown'))
 ```
+
+## Deploying
+
+All publishing is done through the CI pipeline.
+
+To trigger a new deploy, simply update the version number using `npm version <version>` and then push the `package.json` change and related tag to the repo with `git push --follow-tags`.
