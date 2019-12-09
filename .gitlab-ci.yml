@@ -16,11 +16,11 @@ install:
         expire_in: 1 hour
         paths:
             - node_modules/
+            - lib/
     only:
         refs:
             - branches
-            - pushes
-            - external_pull_requests
+            - tags
 
 lint:
     stage: test
@@ -30,8 +30,7 @@ lint:
     only:
         refs:
             - branches
-            - pushes
-            - external_pull_requests
+            - tags
 
 test:
     stage: test
@@ -40,21 +39,7 @@ test:
     only:
         refs:
             - branches
-            - pushes
-            - external_pull_requests
-
-compile:
-    stage: build
-    script:
-        - yarn build
-    artifacts:
-        name: 'lib-$CI_ENVIRONMENT_SLUG-$CI_COMMIT_REF_SLUG'
-        expire_in: 1 day
-        paths:
-            - lib/
-    only:
-        refs:
-            - master
+            - tags
 
 publish:
     stage: deploy
