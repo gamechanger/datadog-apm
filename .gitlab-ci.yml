@@ -59,4 +59,4 @@ publish:
         - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
         - npm publish
     only:
-        - /\d+\.\d+\.\d+/
+        - tags
