@@ -22,6 +22,7 @@ interface TraceConfig {
   serviceName?: string;
   spanName?: string;
   resourceName?: string;
+  isRoot?: boolean;
   /** Cause the span to show up in trace search and analytics */
   makeSearchable?: boolean;
   tags?: Tags;
@@ -42,7 +43,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
         const serviceName = config.serviceName
             ? makeServiceName(config.serviceName)
             : makeServiceName(spanName);
-        const childOf = tracer.scope().active() || undefined;
+        const childOf = config.isRoot ? undefined : (tracer.scope().active() || undefined);
         const resourceName = config.resourceName
             ? config.resourceName
             : className
