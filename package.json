@@ -1,5 +1,5 @@
 {
-    "name": "@gamechanger/datadog-apm",
+    "name": "@springeq/datadog-apm",
     "version": "0.2.0",
     "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
     "main": "lib/index.js",
@@ -17,11 +17,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/gamechanger/datadog-apm.git"
+        "url": "git+https://github.com/springeq/datadog-apm.git"
     },
     "keywords": [
-        "datdog",
-        "gamechanger",
+        "datadog",
+        "springeq",
         "apm"
     ],
     "author": "GameChanger Media",
@@ -30,10 +30,11 @@
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/gamechanger/datadog-apm/issues"
+        "url": "https://github.com/springeq/datadog-apm/issues"
     },
-    "homepage": "https://github.com/gamechanger/datadog-apm#readme",
+    "homepage": "https://github.com/springeq/datadog-apm#readme",
     "devDependencies": {
+        "@types/express": "^4.17.11",
         "@types/jest": "^24.0.23",
         "@types/koa": "^2.0.51",
         "@typescript-eslint/eslint-plugin": "2.3.2",

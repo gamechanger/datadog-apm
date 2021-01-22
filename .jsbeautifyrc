@@ -1,0 +1,9 @@
+{
+	"indent_size": 4,
+	"indent_with_tabs": true,
+	"brace_style": "end-expand",
+	"space_before_conditional": false,
+	"space_after_anon_function": false,
+	"unindent-chained-methods": true,
+	"keep-array-indentation": false
+}

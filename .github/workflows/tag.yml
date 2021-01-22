@@ -1,0 +1,39 @@
+name: Tag
+
+on:
+  pull_request:
+    types: [ closed ]
+
+jobs:
+  publish:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+          token: ${{ secrets.PAT }}
+
+      - name: Use Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: NPM Authenticate
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+          echo "@springeq:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+
+      - name: Run standard-version via npx
+        run: |
+          git config user.name seq-github-service
+          git config user.email seq-github-service@github.com
+          npx standard-version
+
+      - name: Push changes to master
+        run: git push --follow-tags origin master && npm publish
