@@ -6,7 +6,7 @@ import { tracer } from './tracer';
 type Nullable<T> = T | null;
 
 type PrivateDatadogContext = {
-    req: object & {
+    req: Record<string, any> & {
         _datadog?: {
             span?: Span
         }
@@ -35,7 +35,7 @@ const getRootSpanFromRequestContext = (context: PrivateDatadogContext): Nullable
  * @param tags An object with the tags to add to the span
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-const addTags = (tags: object, span?: Nullable<Span>): void => {
+const addTags = (tags: Record<string, any>, span?: Nullable<Span>): void => {
     const currentSpan = span || getCurrentSpan();
 
     if (!currentSpan) {
@@ -53,7 +53,7 @@ const addTags = (tags: object, span?: Nullable<Span>): void => {
  * @param metadata The log metadata to augment
  * @param span An optional span object to add the tags to. If none provided, the current span will be used.
  */
-const addLogMetadata = (metadata: object, span?: Span): void => {
+const addLogMetadata = (metadata: Record<string, any>, span?: Span): void => {
     const currentSpan = span || getCurrentSpan();
 
     if (!currentSpan) {
