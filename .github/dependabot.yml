@@ -17,7 +17,6 @@ updates:
     time: "01:00"
     timezone: America/New_York
   open-pull-requests-limit: 99
-  ignore: []
   registries:
   - npm-registry-registry-yarnpkg-com
   - npm-registry-registry-npmjs-org
