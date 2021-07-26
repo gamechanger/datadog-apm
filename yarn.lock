@@ -1555,9 +1555,9 @@ data-urls@^2.0.0:
     whatwg-url "^8.0.0"
 
 dd-trace@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-1.0.0.tgz#33bb92aaa491b1eabfd20ab0f8504507266c4f96"
-  integrity sha512-cbilNBik/wqRq6gsphLqux9WMOnkqBV+OJozCpecJNsfCZ0NITbqAEfGODtXtef0s2j/sIQx9cF5J+Ipbf+uJw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-1.1.0.tgz#8c70c17ba7d4961b2967790b3197b44a01409a88"
+  integrity sha512-L/imngtJln/vSk7M6kcqQfwFAlonG3LScwiWdl+3TSnHee2kuh/UTHohz6sRD/9Dy9blJ2CCsncDC87eULhP7A==
   dependencies:
     "@types/node" "^10.12.18"
     form-data "^3.0.0"
@@ -1577,7 +1577,6 @@ dd-trace@^1.0.0:
     path-to-regexp "^0.1.2"
     performance-now "^2.1.0"
     protobufjs "^6.9.0"
-    resolve "^1.20.0"
     semver "^5.5.0"
     shimmer "1.2.1"
     source-map "^0.7.3"
