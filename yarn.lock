@@ -1588,9 +1588,9 @@ data-urls@^2.0.0:
     whatwg-url "^8.0.0"
 
 dd-trace@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-1.3.0.tgz#b01e9dabb6122cf8feaa1db8fc346547b7816864"
-  integrity sha512-hjqXYaoPpn1nbp0/+93WU0WYDrN3ZG6X+6g6g8LCcCyQUF+QZc+5bMy4AHIAHmcbVMf7M/YuJf3sZdRdGxapKg==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-1.4.0.tgz#0cd593809d4aa239bcd54027240e45932b86be45"
+  integrity sha512-XP+EEO9IOaXUsGaurCGBGCsUqbJgTetjlt/FY/6vf+XPwD4rS4yJZRI2AsGX/2wTK+5I7AMbZgIJscVoX9jYLA==
   dependencies:
     "@datadog/native-metrics" "^1.0.0"
     "@datadog/pprof" "^0.1.3"
@@ -1598,7 +1598,7 @@ dd-trace@^1.3.0:
     "@types/node" "^10.12.18"
     crypto-randomuuid "^1.0.0"
     form-data "^3.0.0"
-    import-in-the-middle "^1.1.0"
+    import-in-the-middle "^1.1.1"
     koalas "^1.0.2"
     limiter "^1.1.4"
     lodash.kebabcase "^4.1.1"
@@ -1612,7 +1612,6 @@ dd-trace@^1.3.0:
     path-to-regexp "^0.1.2"
     performance-now "^2.1.0"
     semver "^5.5.0"
-    shimmer "1.2.1"
     source-map "^0.7.3"
     source-map-resolve "^0.6.0"
 
@@ -2352,10 +2351,10 @@ import-fresh@^3.0.0, import-fresh@^3.2.1:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
 
-import-in-the-middle@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/import-in-the-middle/-/import-in-the-middle-1.1.0.tgz#b3a90b0357b68befa32bec98257e845073372043"
-  integrity sha512-RjhfSRGkGdzuxSO4Cfalh8wJ9OPkRn4I9BhGOgNVSr71rvws5R9Xv9tOxn9g40Q6xE0F3oXVgtW4IEg/21aq9w==
+import-in-the-middle@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/import-in-the-middle/-/import-in-the-middle-1.1.1.tgz#5b5dfeb4f98688b15bee87139469dbb1207a5dfc"
+  integrity sha512-Qs77TopqLK2qNVfslMpvVBDgWamttEG/Ss6C3r23d3sA+mU5aU94YT2qlF9jtvXO5wBzcy5z1LFjGVp5jecBgw==
   dependencies:
     module-details-from-path "^1.0.3"
 
@@ -3870,11 +3869,6 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
-
-shimmer@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/shimmer/-/shimmer-1.2.1.tgz#610859f7de327b587efebf501fb43117f9aff337"
-  integrity sha512-sQTKC1Re/rM6XyFM6fIAGHRPVGvyXfgzIDvzoq608vM+jeyVD0Tu1E6Np0Kc2zAIFWIj963V2800iF/9LPieQw==
 
 signal-exit@^3.0.2:
   version "3.0.2"
