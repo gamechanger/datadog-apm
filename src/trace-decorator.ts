@@ -89,7 +89,7 @@ const traceFunction = (config: TraceConfig) => <F extends (...args: any[]) => an
     } as F;
 
 const traceMethod = (config?: TraceConfig) =>
-    function <R extends any, A extends any[], F extends (...args: A) => R>(
+    function <R, A extends any[], F extends (...args: A) => R>(
         target: any,
         _propertyKey: string,
         descriptor: PropertyDescriptor,
