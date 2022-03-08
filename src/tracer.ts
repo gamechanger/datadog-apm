@@ -16,12 +16,6 @@ const init = (options: TracerOptions): void => {
     tracer = require('dd-trace');
     tracer.init(tracerOptions);
     tracer.isMock = false;
-
-    if (tracerOptions.enabled) {
-        console.log('DataDog APM Trace Running, with options: ', tracerOptions);
-    } else {
-        console.log('DataDog APM Trace Disabled');
-    }
 };
 
 export {
