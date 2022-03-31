@@ -1,6 +1,7 @@
-import { Tracer, TracerOptions } from 'dd-trace';
+import { Tracer, TracerOptions as DDTracerOptions } from 'dd-trace';
 import { mockTracer } from './mock-tracer';
 
+type TracerOptions = DDTracerOptions & { useMock?: boolean };
 let tracerOptions: TracerOptions = {};
 let tracer: Tracer & { isMock?: boolean } = mockTracer;
 
@@ -12,10 +13,14 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  * @param options The `TracerOptions` to be passed the tracer init function
  */
 const init = (options: TracerOptions): void => {
-    tracerOptions = options;
-    tracer = require('dd-trace');
+    tracerOptions = options as DDTracerOptions;
+
+    if (options.useMock !== true) {
+        tracer = require('dd-trace');
+        tracer.isMock = false;
+    }
+
     tracer.init(tracerOptions);
-    tracer.isMock = false;
 };
 
 export {
