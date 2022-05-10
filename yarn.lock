@@ -522,27 +522,27 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@datadog/native-appsec@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@datadog/native-appsec/-/native-appsec-1.0.1.tgz#813d93e250f486dc5228c842062391f35e8a8236"
-  integrity sha512-qdRmvgO5gtDnn42XTrTP4MxXUn7jeJqfq4CZmKW9VlFqUhxu8pNcOBaoo92XJUAM6whiyGEkvjWsbHNqESNFpA==
+"@datadog/native-appsec@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@datadog/native-appsec/-/native-appsec-1.1.1.tgz#a9aff685217d47b1444f10529c7d442351b98486"
+  integrity sha512-Aez74nNpfUlvJ5RyHuycy7tyl4BLCESPH8xG9INDIplIvgGIWGwlZRhhkQ/33623m6JpwsHqw9I9kvvgoiJTqQ==
   dependencies:
     detect-libc "^1.0.3"
     minimist "^1.2.6"
     tar "^6.1.11"
 
-"@datadog/native-metrics@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@datadog/native-metrics/-/native-metrics-1.1.0.tgz#ef860a4cbea81b6e1559b280f5f1f3cd2cc22585"
-  integrity sha512-OSrhoo8U/JB/FltvAp54cgMHCBWEriF/D/ZboBH4Pn7UY/Zu8dkzB6eAWQFJIxQlHjYrAEuNgZPBkaHhS3e0KQ==
+"@datadog/native-metrics@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@datadog/native-metrics/-/native-metrics-1.2.0.tgz#6f8d39ba870d247ba5c72297ab5ed8461f686279"
+  integrity sha512-U1jXtN60+HL0KHzyYi9+QaNdbXqKjQGANSoqAdMCFzRG7ZuAQ8kjKng4RIY6QT/kOZQZ17UalrsqhUQjuVsRpA==
   dependencies:
-    nan "^2.14.2"
+    nan "^2.15.0"
     node-gyp-build "^3.9.0"
 
-"@datadog/pprof@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@datadog/pprof/-/pprof-0.3.0.tgz#aa6f4611844e2521633f34b1649778ceec0493bb"
-  integrity sha512-RskYpLD2mWdvUk2OU9p3gynx8QxHtfPdRPWs3vqlM+PMf+wstibcYMW7auNY4s3gVA1mT7HiBjW7j0m37rOHOQ==
+"@datadog/pprof@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@datadog/pprof/-/pprof-0.4.0.tgz#9d6acb23dd8edfff0171cbb52ac559bbab13ba74"
+  integrity sha512-TG9w9xAqr/Dr6WI/StSirkGKiT9gQXMFx0zJeC/yjYtZWCO/8X7fwfCZJOMcQq4yBvMyKMDHFSNp1XVAKIRorQ==
   dependencies:
     delay "^5.0.0"
     findit2 "^2.2.3"
@@ -1129,12 +1129,7 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
   integrity sha512-FwI9gX75FgVBJ7ywgnq/P7tw+/o1GUbtP0KzbtusLigAOgIgNISRK0ZPl4qertvXSIE8YbsVJueQ90cDt9YYyw==
 
-"@types/node@*", "@types/node@>=13.7.0":
-  version "16.4.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.13.tgz#7dfd9c14661edc65cccd43a29eb454174642370d"
-  integrity sha512-bLL69sKtd25w7p1nvg9pigE4gtKVpGTPojBFLMkGHXuUgap2sLqQt2qUnqmVCDfzGUL0DRNZP+1prIZJbMeAXg==
-
-"@types/node@>=12":
+"@types/node@*", "@types/node@>=12", "@types/node@>=13.7.0":
   version "17.0.21"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.21.tgz#864b987c0c68d07b4345845c3e63b75edd143644"
   integrity sha512-DBZCJbhII3r90XbQxI8Y9IjjiiOGlZ0Hr32omXIZvwwZ7p4DMMXGrKXVyPfuoBOri9XNtL0UK69jYIBIsRX3QQ==
@@ -1716,13 +1711,13 @@ crypto-randomuuid@^1.0.0:
   integrity sha512-/RC5F4l1SCqD/jazwUF6+t34Cd8zTSAGZ7rvvZu1whZUhD2a5MOGKjSGowoGcpj/cbVZk1ZODIooJEQQq3nNAA==
 
 dd-trace@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-2.5.0.tgz#69086c995e68535741c625444b05995f9b618d1e"
-  integrity sha512-w/SPQwT0axDGYurpDRiA2M89B9ndK3/t+CL6S4vdbcULt2CiATTeww7aUiLVv319likv1hg2kkW4ZcAQLoml8Q==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/dd-trace/-/dd-trace-2.7.0.tgz#2139c2f8a5bb7b042487a3f0e0d107dc03265454"
+  integrity sha512-P6y1RG58AjDWZwwl8e1J87xveF68emBOoyv2tCdbQEB4n9dW4bV/3gfy4yI8c4Gdqd/nhOYMkaqELmiWxySTNw==
   dependencies:
-    "@datadog/native-appsec" "^1.0.1"
-    "@datadog/native-metrics" "^1.1.0"
-    "@datadog/pprof" "^0.3.0"
+    "@datadog/native-appsec" "^1.1.1"
+    "@datadog/native-metrics" "^1.2.0"
+    "@datadog/pprof" "^0.4.0"
     "@datadog/sketches-js" "^1.0.4"
     "@types/node" ">=12"
     crypto-randomuuid "^1.0.0"
@@ -2432,12 +2427,7 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-ignore@^5.1.4, ignore@^5.1.8:
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.1.8.tgz#f150a8b50a34289b33e22f5889abd4d8016f0e57"
-  integrity sha512-BMpfD7PpiETpBl/A6S498BaIJ6Y/ABT93ETbby2fP00v4EbvPBXWEoaR1UBPKs3iR53pJY7EtZk5KACI57i1Uw==
-
-ignore@^5.2.0:
+ignore@^5.1.4, ignore@^5.1.8, ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
   integrity sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==
@@ -3385,7 +3375,7 @@ multer@^1.4.2:
     type-is "^1.6.4"
     xtend "^4.0.0"
 
-nan@^2.14.0, nan@^2.14.2:
+nan@^2.14.0, nan@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
   integrity sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==
