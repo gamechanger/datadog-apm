@@ -2,3 +2,4 @@ node_modules
 lib
 tsconfig.tsbuildinfo
 .DS_Store
+package-lock.json
