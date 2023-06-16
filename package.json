@@ -1,6 +1,6 @@
 {
     "name": "@gamechanger/datadog-apm",
-    "version": "1.1.4",
+    "version": "1.2.0",
     "description": "Utility functions to help integrate Datadog's APM with a Node.js client",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -50,6 +50,6 @@
         "typescript": "^5.0.4"
     },
     "dependencies": {
-        "dd-trace": "^2.8.0"
+        "dd-trace": "3.17.0"
     }
 }
