@@ -50,6 +50,6 @@
         "typescript": "^5.1.3"
     },
     "dependencies": {
-        "dd-trace": "3.22.1"
+        "dd-trace": "4.3.0"
     }
 }
