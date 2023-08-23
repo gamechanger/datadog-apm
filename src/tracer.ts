@@ -26,7 +26,7 @@ const init = (
 
     tracer.init(tracerOptions);
     pluginOpts.forEach( (opt) => {
-      tracer.use(opt.pluginName', opt.pluginOPtions);
+      tracer.use(opt.pluginName, opt.pluginOptions);
     }
 };
 
