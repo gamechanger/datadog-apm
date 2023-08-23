@@ -21,6 +21,10 @@ const init = (options: TracerOptions): void => {
     }
 
     tracer.init(tracerOptions);
+    tracer.use('http', {
+      blocklist: ["/healthz", "/internal/health"],
+    }
+})
 };
 
 export {
