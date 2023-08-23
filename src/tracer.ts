@@ -26,8 +26,7 @@ const init = (options: TracerOptions): void => {
             blocklist: ['/healthz','/internal/health'],
         },
         blocklist: ['/healthz', '/internal/health'],
-    }
-})
+    });
 };
 
 export {
