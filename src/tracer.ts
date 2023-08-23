@@ -22,9 +22,6 @@ const init = (options: TracerOptions): void => {
 
     tracer.init(tracerOptions);
     tracer.use('http', {
-        server: {
-            blocklist: ['/healthz','/internal/health'],
-        },
         blocklist: ['/healthz', '/internal/health'],
     });
 };
