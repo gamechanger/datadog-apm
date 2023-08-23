@@ -13,10 +13,10 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  * @param options The `TracerOptions` to be passed the tracer init function
  */
 const init = (
-              options: TracerOptions, 
-              pluginOpts: { pluginName: string, pluginOptions: any}[] 
-             ): void => {
-                 
+    options: TracerOptions,
+    plugins: {name: any, config: any}[]
+): void => {
+
     tracerOptions = options as DDTracerOptions;
 
     if (options.useMock !== true) {
@@ -25,9 +25,9 @@ const init = (
     }
 
     tracer.init(tracerOptions);
-    pluginOpts.forEach( (opt) => {
-      tracer.use(opt.pluginName, opt.pluginOptions);
-    }
+    plugins.forEach( (plugin) => {
+        tracer.use(plugin.name, plugin.config);
+    });
 };
 
 export {
@@ -35,4 +35,5 @@ export {
     init,
     tracerOptions,
     TracerOptions,
+
 }
