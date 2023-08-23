@@ -12,7 +12,11 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  *
  * @param options The `TracerOptions` to be passed the tracer init function
  */
-const init = (options: TracerOptions): void => {
+const init = (
+              options: TracerOptions, 
+              pluginOpts: { pluginName: string, pluginOptions: any}[] 
+             ): void => {
+                 
     tracerOptions = options as DDTracerOptions;
 
     if (options.useMock !== true) {
@@ -21,9 +25,9 @@ const init = (options: TracerOptions): void => {
     }
 
     tracer.init(tracerOptions);
-    tracer.use('http', {
-        blocklist: ['/healthz', '/internal/health'],
-    });
+    pluginOpts.forEach( (opt) => {
+      tracer.use(opt.pluginName', opt.pluginOPtions);
+    }
 };
 
 export {
