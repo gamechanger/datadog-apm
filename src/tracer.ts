@@ -22,12 +22,11 @@ const init = (
     if (options.useMock !== true) {
         tracer = require('dd-trace');
         tracer.isMock = false;
-        if (plugins == undefined || plugins.length === 0) {
-            return;
+        if (plugins != undefined && plugins.length > 0) {
+            plugins.forEach( (plugin) => {
+                tracer.use(plugin.name, plugin.config);
+            });
         }
-        plugins.forEach( (plugin) => {
-            tracer.use(plugin.name, plugin.config);
-        });
     }
 
     tracer.init(tracerOptions);
