@@ -14,7 +14,7 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  */
 const init = (
     options: TracerOptions,
-    plugins: {name: any, config: any}[]
+    plugins: {name: any, config: any}[] = [],
 ): void => {
 
     tracerOptions = options as DDTracerOptions;
