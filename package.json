@@ -38,7 +38,7 @@
         "@types/koa": "2.13.9",
         "@typescript-eslint/eslint-plugin": "6.7.5",
         "@typescript-eslint/parser": "^6.7.5",
-        "eslint": "8.51.0",
+        "eslint": "8.52.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "2.28.1",
         "eslint-plugin-jest": "^27.2.2",
