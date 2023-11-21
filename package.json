@@ -35,7 +35,7 @@
     "homepage": "https://github.com/gamechanger/datadog-apm#readme",
     "devDependencies": {
         "@types/jest": "^29.5.2",
-        "@types/koa": "2.13.9",
+        "@types/koa": "2.13.12",
         "@typescript-eslint/eslint-plugin": "6.7.5",
         "@typescript-eslint/parser": "^6.7.5",
         "eslint": "8.51.0",
