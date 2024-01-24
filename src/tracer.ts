@@ -12,12 +12,21 @@ let tracer: Tracer & { isMock?: boolean } = mockTracer;
  *
  * @param options The `TracerOptions` to be passed the tracer init function
  */
-const init = (options: TracerOptions): void => {
+const init = (
+    options: TracerOptions,
+    plugins: {name: any, config: any}[] = [],
+): void => {
+
     tracerOptions = options as DDTracerOptions;
 
     if (options.useMock !== true) {
         tracer = require('dd-trace');
         tracer.isMock = false;
+        if (plugins != undefined && plugins.length > 0) {
+            plugins.forEach( (plugin) => {
+                tracer.use(plugin.name, plugin.config);
+            });
+        }
     }
 
     tracer.init(tracerOptions);
