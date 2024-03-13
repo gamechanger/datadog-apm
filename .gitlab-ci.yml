@@ -1,4 +1,4 @@
-image: docker.gamechanger.io/node:16
+image: docker.gamechanger.io/node:18.16.0-alpine3.6
 
 stages:
     - setup
