@@ -26,6 +26,6 @@
     "eslint.packageManager": "yarn",
     "editor.tabSize": 4,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     }
 }
