@@ -93,6 +93,22 @@ APM.addTags({ teamId: context.params.teamId }, APM.getRootSpanFromContext(contex
 APM.markAsError(new Error('I am not thrown'))
 ```
 
+## Initialization
+
+To configure the datadog tracer simply invoke the provided init method with the options you need. This needs to be done once somewhere in your index or main file.
+
+An example main.ts
+
+```TS
+import * as APM from '@gamechanger/datadog-apm';
+
+const dataDogOptions:TracerOptions = {... some options ...};
+
+APM.init(dataDogOptions)
+
+... rest of imports/code go here
+```
+
 ## Deploying
 
 All publishing is done through the CI pipeline.
