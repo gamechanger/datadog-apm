@@ -1,3 +1,7 @@
+# DEPRECATED
+This project is no longer in use.  It has been moved into eden [here](https://github.com/gamechanger/eden/tree/main/backend/libs/datadog/src/apm)
+
+
 # Datadog APM Helpers
 
 A lightweight wrapper over Datadog's `dd-trace` library, adding utility functions to make it easier to trace, tag, and search for your functions.
